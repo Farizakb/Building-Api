@@ -1,18 +1,28 @@
-from django.http import JsonResponse
-import json
-# Create your views here.
+from rest_framework import generics
+
+from .serializer import ProductSerializer
+from .models import Product
 
 
-def home(request):
-    print(request.body)
-    print(request.headers)
-    # body = request.body
-    # data = {}
-    # try:
-    #     data = json.loads(body)
-    # except:
-    #     pass
-    # print(data)
+class ProductsListView(generics.ListCreateAPIView):
+    
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+
+class ProductDetailView(generics.RetrieveAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
     
     
-    return JsonResponse({'message':"Hello"})
+# class ProductDeleteView(generics.DestroyAPIView):
+#     queryset = Product.objects.all()
+#     serializer_class = ProductSerializer 
+    
+    
+# class ProductUptadeView(generics.UpdateAPIView):
+#     queryset = Product.objects.all()
+#     serializer_class = ProductSerializer
+    
+#     def perform_update(self, serializer):
+        
