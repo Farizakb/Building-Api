@@ -1,7 +1,12 @@
-from rest_framework import generics
+from rest_framework import generics, mixins
 
 from .serializer import ProductSerializer
 from .models import Product
+
+class ProductsMixinView(generics.GenericAPIView):
+    pass
+
+
 
 
 class ProductsListView(generics.ListCreateAPIView):
