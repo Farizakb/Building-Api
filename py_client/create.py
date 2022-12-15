@@ -1,8 +1,8 @@
 import requests
 
 
-headers = {'Authorization': 'Bearer 56be721aeecb0ed611e2765e9253e2d62f0badfc'}
-endpoint = "http://localhost:8000/api/products/" 
+headers = {'Authorization': 'Bearer  6c44c0c931a30f44191bdfa3e848a7de2febf6b9'}
+endpoint = "http://127.0.0.1:8000/products" 
 
 data = {
     "title": "This field is done",

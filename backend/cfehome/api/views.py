@@ -1,10 +1,8 @@
-from rest_framework import generics, mixins
-
+from rest_framework import generics, mixins, permissions, authentication
+from .authentication import TokenAuthentication
 from .serializer import ProductSerializer
 from .models import Product
 
-class ProductsMixinView(generics.GenericAPIView):
-    pass
 
 
 
@@ -13,6 +11,9 @@ class ProductsListView(generics.ListCreateAPIView):
     
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    authentication_classes = [authentication.SessionAuthentication,TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
 
 
 class ProductDetailView(generics.RetrieveAPIView):
