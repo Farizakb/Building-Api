@@ -7,4 +7,5 @@ class AdminProduct(admin.ModelAdmin):
     list_display = ('sale_price',)
     
     
+    
 admin.site.register(Product,AdminProduct)
