@@ -2,12 +2,12 @@ from rest_framework import generics, mixins, permissions, authentication
 from .authentication import TokenAuthentication
 from .serializer import ProductSerializer
 from .models import Product
-from .mixin import StaffEditorPermissionMixin 
+from .mixin import StaffEditorPermissionMixin, UserQuerySetMixin
 
 
 
 
-class ProductsListView(StaffEditorPermissionMixin, generics.ListCreateAPIView):
+class ProductsListView(UserQuerySetMixin,StaffEditorPermissionMixin, generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     

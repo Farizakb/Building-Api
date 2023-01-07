@@ -8,8 +8,6 @@ User = settings.AUTH_USER_MODEL
 
 class Product(models.Model):
     user = models.ForeignKey(User, default=1, null=True,  on_delete=models.SET_NULL)
-    print(user)
-    print('!!!!!!!!!!!!!!!!!!!!!!')
 
     
     title = models.CharField(max_length=120)
