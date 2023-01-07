@@ -3,8 +3,8 @@ from .models import Product
 # Register your models here.
 
 class AdminProduct(admin.ModelAdmin):
-    fields = ('title','content', 'price',)
-    list_display = ('sale_price',)
+    fields = ('user','title','content', 'price',)
+    list_display = ('title',)
     
     
     
