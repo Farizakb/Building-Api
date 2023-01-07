@@ -12,6 +12,7 @@ class ProductsListView(UserQuerySetMixin,StaffEditorPermissionMixin, generics.Li
     serializer_class = ProductSerializer
     
     
+    
     # def get_queryset(self, *args, **kwargs):
     #     qs = super().get_queryset(*args, **kwargs)
     #     request = self.request
