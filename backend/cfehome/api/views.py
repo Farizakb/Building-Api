@@ -10,6 +10,7 @@ from .mixin import StaffEditorPermissionMixin
 class ProductsListView(StaffEditorPermissionMixin, generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    
     # authentication_classes = [authentication.SessionAuthentication, TokenAuthentication]
     # permission_classes = [permissions.IsAuthenticated]
 
