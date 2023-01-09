@@ -43,9 +43,20 @@ class Product(models.Model):
     def __repr__(self) -> str:
         return self.title
     
+    def get_absolute_url(self):
+        return f"products/{self.pk}/"
+    
+    @property
+    def path(self):
+        return f"products/{self.pk}/"
+    
     @property
     def sale_price(self):
         return "%.2f" %(float(self.price) * 0.8)
+    
+    @property
+    def body(self):
+        return self.content
     
     
     

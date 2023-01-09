@@ -15,6 +15,7 @@ class ProductSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='product-detail', lookup_field = 'pk')
     title = serializers.CharField(validators=[validators.validate_title])
     
+    body = serializers.CharField(source='content')
     class Meta:
         model = Product
         fields = [
@@ -22,8 +23,9 @@ class ProductSerializer(serializers.ModelSerializer):
             'url',
             'pk',
             'title',
-            'content',
+            'body',
             'price',
             'sale_price',
-            'public'
+            'public',
+            'path',
         ]
