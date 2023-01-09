@@ -18,7 +18,7 @@ class JWTClient:
     # ensure this matches your simplejwt config
     header_type: str = "Bearer"
     # this assumesy ou have DRF running on localhost:8000
-    base_endpoint = "http://localhost:8000/api"
+    base_endpoint = "http://localhost:8000"
     # this file path is insecure
     cred_path: pathlib.Path = pathlib.Path("creds.json")
 
