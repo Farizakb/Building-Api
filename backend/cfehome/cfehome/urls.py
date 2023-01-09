@@ -19,6 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('api.urls')),
     path('v2', include('cfehome.routers')),
+    path('search', include('search.urls')),
     path('admin/', admin.site.urls),
     
 ]
