@@ -4,7 +4,8 @@ from .models import Product
 
 class AdminProduct(admin.ModelAdmin):
     fields = ('user','title','content', 'price',)
-    list_display = ('title',)
+    list_display = ('title','content','user','price','public', 'photo')
+    list_editable = ('content','user','price','public', 'photo')
     
     
     
